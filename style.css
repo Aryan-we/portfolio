@@ -386,7 +386,7 @@ padding :1rem 0;
     .navbar-items font{
         padding: 2px 20px;
         width:44%;
-        font-size: 10px;
+        font-size: 5px;
     
     }
     .navbar-list{
@@ -418,9 +418,9 @@ padding :1rem 0;
         border-bottom: 0px solid;
         text-align: center;
         font-size: 15px;
-        overfloe-y:scroll
-        height:100px;
-        width:100px;
+        overflow-y:scroll
+        height:200px;
+        width:100%;
     }
 
     #heading{
