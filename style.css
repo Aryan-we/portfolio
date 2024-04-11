@@ -306,7 +306,7 @@ padding :1rem 0;
         text-align: center;
         border-radius: 5px;
         padding: 2px;
-        font-size: 5x;
+        font-size: 2x;
        
     }
     .navbar-items .navbar-list a:hover{
@@ -386,7 +386,7 @@ padding :1rem 0;
     .navbar-items font{
         padding: 2px 20px;
         width:44%;
-        font-size: 20px;
+        font-size: 10px;
     
     }
     .navbar-list{
@@ -418,6 +418,9 @@ padding :1rem 0;
         border-bottom: 0px solid;
         text-align: center;
         font-size: 15px;
+        overfloe-y:scroll
+        height:100px;
+        width:100px;
     }
 
     #heading{
