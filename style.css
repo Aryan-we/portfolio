@@ -386,7 +386,7 @@ padding :1rem 0;
     .navbar-items font{
         padding: 2px 20px;
         width:44%;
-        font-size: 5px;
+        font-size: 6px;
     
     }
     .navbar-list{
@@ -399,12 +399,12 @@ padding :1rem 0;
         
     }
     .navbar-items .navbar-list a{
-        width: 40%;
+        width: 50%;
         height: 30px;
         text-align: center;
         border-radius: 5px;
         padding-top: 4px;
-        font-size: 10px;
+        font-size: 5px;
        
     }
     .container .box img{
@@ -417,14 +417,12 @@ padding :1rem 0;
     #explain{
         border-bottom: 0px solid;
         text-align: center;
-        font-size: 15px;
-        overflow-y:scroll
-        height:200px;
-        width:100%;
+        font-size: 5px;
+        
     }
 
     #heading{
-        font-size: 17px;
+        font-size: 13px;
        
     }
     
