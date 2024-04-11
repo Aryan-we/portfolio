@@ -1,0 +1,435 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.logo-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.navbar{
+    background-color: #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-items{
+    padding: 5px 35px;
+    width:44%;
+
+}
+.navbar-list{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+    
+}
+.navbar-items .navbar-list a{
+    width: 20%;
+    height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    padding-top: 4px;
+   
+}
+.navbar-items .navbar-list a:hover{
+    background-color: green;
+    color:white;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+   color: white; 
+}
+.main{
+    margin-top: 20px;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    height: 550px;
+
+}
+.main-image{
+    height: 500px;
+
+}
+.main .about-me button{
+    font-size:20px;
+    font-weight:700;
+    border-radius:3px;
+    padding:12px 20px;
+    color:white;
+    background-color:lightseagreen;
+    border:none;
+    margin:10px;
+    transition:all ease 1s;
+}
+.main .about-me button:hover{
+    box-shadow: 5px 5px 0px green;
+}
+.about-me{
+    border: 0px solid;
+    text-align: center;
+    width: 40%;
+    font-size: 30px;
+    padding-left: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+.about-me-image{
+    width: 40%;
+    border: 0px solid;
+    text-align: right;
+    
+}
+.about-me-image img{
+    border-radius: 30%;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+
+}
+.about-me-image img:hover{
+    border-radius: 30%;
+    border-left: 2px solid;
+    border-right: 2px solid;
+    border-top: 0;
+    border-bottom: 0;
+
+}
+.main-contact-me{
+    border: 0px solid;
+    margin-top: 20px;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    flex-direction: column;
+    height: 550px;
+
+}
+.main-contact-me .address,.link{
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+
+}
+
+.main-contact-me .address div{
+    width:40%;
+    background-color: silver;
+    padding: 30px 30px;
+    border: opx solid;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.main-contact-me .link a{
+    width:30%;
+    background-color: silver;
+    padding: 30px 30px;
+    border: opx solid;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.main-contact-me .link a:hover{
+    background-color: green;
+}
+/*
+.main-contact-me .address .location:hover{
+    background-color: green;
+    color: white;
+}*/
+
+/*projects styling*/
+/* blogs */
+.blog .box-container{
+    border:0px solid;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(27rem,1fr));
+    border-radius :.5rem;
+    box-shadow:var(--box-shadow);
+    height :85rem;
+}
+.blog .box-container .box{
+    padding:3rem 2rem ; 
+    background-color:#fff;
+    outline:var(--outline);
+    outline-offset:-1rem;
+  
+    box-shadow :var(--box-shadow);
+}
+.blog .box-container .box:hover{
+    box-shadow:10px 10px 20px 4px solid var(--green);
+
+}
+.blog .box-container .box img{
+  margin:1rem 0;  
+  border-radius:2px;
+    
+}
+.blog .box-container .box h3{
+font-size :2.5rem ;
+line-height :.8;
+color:var(--black);
+
+
+}
+.blog .box-container .box{
+overflow:hidden;
+
+    
+}
+.blog .box-container .box .content{
+    padding:2rem;
+}
+.blog .box-container .box .content .icons{
+    display:flex;
+    align-items :center;
+    justify-content :space-between;
+    padding-bottom:1.5rem;
+    border-bottom:2px solid;
+    margin-bottom :1rem;
+    }
+.blog .box-container .box .content .icons a{
+    color:var(--light-color);
+    font-size:1rem;
+    
+    }
+.blog .box-container .box .content .icons a i{
+    color:green;
+    padding:.5rem;
+ 
+    
+    }   
+    
+.blog .box-container .box .content .icons a:hover{ 
+    color:black;
+    
+}
+.blog .box-container .box .content h3{
+ line-height:1.8; 
+ color:var(--black);  
+   font-size :1.5rem;
+ padding-bottom :.5rem;
+}
+.blog .box-container .box .content p{
+     line-height:1.8;  
+     color:var(--line-color);  
+     font-size :1.5rem;
+     padding-bottom :.5rem;
+    
+}
+/* blogs */
+/* categories */
+.categories .box-container{
+    border:0px solid;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(21rem,1fr));
+    
+}
+
+.categories .box-container .box{
+    padding:3rem 0;
+    background :#fff;    
+    border-radius:0.5rem;
+    box-shadow:var(--box-shadow);
+    outline:var(--outline);
+    outline-offset:-1rem;
+    text-align:center;
+}
+
+.categories .box-container .box:hover{
+ box-shadow:10px 10px 20px 4px solid var(--green);
+
+
+}
+.categories .box-container .box img{
+margin:1rem 0;
+}
+.categories .box-container .box h3{
+font-size :2rem ;
+color :var(--black);
+line-height :1.8;
+padding :1rem 0;
+
+}
+
+.categories .box-container .box p{
+   font-size:1.7rem;
+   color:var(--light-color);
+   line-height:1.8;    
+    
+}
+@media(max-width:1000px){
+    .logo-img{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+    }
+    .navbar{
+        background-color: #eee;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .navbar-items{
+        padding: 1px 15px;
+        width:50%;
+    
+    }
+    .navbar-list{
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        cursor: pointer;
+        
+        
+    }
+    .navbar-items .navbar-list a{
+        width: 0px;
+        height: 10px;
+        text-align: center;
+        border-radius: 5px;
+        padding: 2px;
+        font-size: 5x;
+       
+    }
+    .navbar-items .navbar-list a:hover{
+        background-color: green;
+        color:white;
+    }
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    a:hover{
+       color: white; 
+    }
+    .main{
+        margin-top: 20px;
+        background-color: #eee;
+        display: flex;
+        align-items: center;
+        justify-content:space-around;
+        height: 550px;
+    
+    }
+    .main-image{
+        height: 195px;
+    
+    }
+    .main .about-me button{
+        font-size:10px;
+        font-weight:700;
+        border-radius:3px;
+        padding:12px 20px;
+        color:white;
+        background-color:lightseagreen;
+        border:none;
+        margin:10px;
+        transition:all ease 1s;
+    }
+    .main .about-me button:hover{
+        box-shadow: 5px 5px 0px green;
+    }
+    .about-me{
+        border: 0px solid;
+        text-align: center;
+        width: 40%;
+        font-size: 20px;
+        padding-left: 10px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        overflow: scroll;
+    }
+    .about-me-image{
+        width: 40%;
+        border: 0px solid;
+        text-align: right;
+        
+    }
+    .about-me-image img{
+        border-radius: 30%;
+        border-top: 2px solid;
+        border-bottom: 2px solid;
+    
+    }
+    .about-me-image img:hover{
+        border-radius: 30%;
+        border-left: 2px solid;
+        border-right: 2px solid;
+        border-top: 0;
+        border-bottom: 0;
+    
+    }
+    .navbar{
+        background-color: #eee;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .navbar-items font{
+        padding: 2px 20px;
+        width:44%;
+        font-size: 20px;
+    
+    }
+    .navbar-list{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style: none;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        cursor: pointer;
+        
+    }
+    .navbar-items .navbar-list a{
+        width: 40%;
+        height: 30px;
+        text-align: center;
+        border-radius: 5px;
+        padding-top: 4px;
+        font-size: 10px;
+       
+    }
+    .container .box img{
+        height: 100px;
+        width: 100px;
+        margin: 20px 0px;
+        overflow: hidden;
+    }
+   
+    #explain{
+        border-bottom: 0px solid;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    #heading{
+        font-size: 17px;
+       
+    }
+    
+    #img{
+        height:200px;
+       
+    }
+    .main-contact-me .address .location{
+        text-align: left;
+    }
+}
