@@ -306,7 +306,7 @@ padding :1rem 0;
         text-align: center;
         border-radius: 5px;
         padding: 2px;
-        font-size: 2x;
+        font-size: 2px;
        
     }
     .navbar-items .navbar-list a:hover{
@@ -357,15 +357,19 @@ padding :1rem 0;
         overflow: scroll;
     }
     .about-me-image{
-        width: 40%;
+        width: 45%;
         border: 0px solid;
         text-align: right;
+        text-align: left;
         
     }
     .about-me-image img{
         border-radius: 30%;
         border-top: 2px solid;
         border-bottom: 2px solid;
+        
+        
+
     
     }
     .about-me-image img:hover{
@@ -384,9 +388,9 @@ padding :1rem 0;
     }
     
     .navbar-items font{
-        padding: 2px 20px;
+        padding: 2px 8px;
         width:44%;
-        font-size: 6px;
+        font-size: 20px;
     
     }
     .navbar-list{
@@ -397,30 +401,35 @@ padding :1rem 0;
         font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         cursor: pointer;
         
+        
     }
     .navbar-items .navbar-list a{
-        width: 50%;
+        width: 44%;
         height: 30px;
         text-align: center;
         border-radius: 5px;
         padding-top: 4px;
-        font-size: 5px;
+        font-size: 8px;
        
     }
+    
     .container .box img{
-        height: 100px;
-        width: 100px;
+        height: 63px;
+        width: 63px;
         margin: 20px 0px;
         overflow: hidden;
+    }
+    .container .box h3{
+       font-size: 14px;
     }
    
     #explain{
         border-bottom: 0px solid;
         text-align: center;
-        font-size: 5px;
-        
+        font-size: 7px;
+        overflow-y:scroll;
     }
-
+  
     #heading{
         font-size: 13px;
        
@@ -431,6 +440,8 @@ padding :1rem 0;
        
     }
     .main-contact-me .address .location{
-        text-align: left;
+       font-size: 10px;
+       overflow: auto;
+       
     }
 }
