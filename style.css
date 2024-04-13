@@ -311,7 +311,7 @@ padding :1rem 0;
     }
     .navbar-items .navbar-list a li{
         padding-top: 5px;
-        font-size: 8px;
+        font-size: 4px;
     }
     .navbar-items .navbar-list a:hover{
         background-color: green;
