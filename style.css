@@ -448,4 +448,7 @@ padding :1rem 0;
        overflow: auto;
        
     }
+    .main-contact-me .link a{
+        font-size: 15px;
+    }
 }
