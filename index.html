@@ -6,6 +6,100 @@
     <title>Aryan Kumar Dubey</title>
     <link rel="stylesheet" href="style.css">
 </head>
+    <style>
+    *{
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: #eee;
+    }
+    
+    .navbar{
+        display: flex;
+        text-align: center;
+        justify-content: space-between;
+        background-color: #fff;
+
+    }
+
+    .right{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 35px;
+        list-style: none;
+        border: 0px solid;
+    }
+    .right li a{
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 100;
+        color: black;
+        padding: 10px;
+
+    }
+    .right li a:hover{
+        background-color: green;
+        color: white;
+        border-radius: 20px;
+    }
+    .hide{
+        position: fixed;
+        top: 50px;
+        right: -60%;
+        width: 200px;
+        height: auto;
+        background-color: #fff;
+        border-radius: 10px;
+        border: 1px solid;
+        box-shadow: -5px 5px 5px #7a7474;
+        padding: 10px;
+        
+    }
+    .hide li{
+        list-style: none;
+        margin: 10px 0px;
+        width: 100%;
+        padding: 10px;
+    }
+    .hide li a{
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 100;
+        color: black;
+
+    }
+    .hide li:hover{
+        background-color: green;
+        color: white;
+        border-radius: 20px;
+    }
+    .hide li a:hover{
+        color: white;
+    }
+    .bar{
+        display: none;
+    }
+    
+    @media (max-width:900px){
+        .left i{
+            font-size: 20px;
+        }
+        .m{
+            display: none;
+        }
+        .bar{
+            display: block;
+        }
+        
+    .hide{
+        padding: 7px;
+        
+    }
+    }
+</style>
 <body>
    <div class="navbar">
     <div class="navbar-items">
@@ -23,16 +117,29 @@
         </font>
         
     </div>
-    <div class="navbar-items">
-        <ul class="navbar-list">
-            <a href="index.html"><li>Home</li></a>
-            <a href="education.html"><li>Education</li></a>
-            <a href="hobbies.html"><li>Hobbies</li></a>
-            <a href="projects.html"><li>Projects</li></a>
-            <a href="achievement.html"><li>Achievement</li></a>
-            <a href="contactme.html"><li>Contact Me</li></a>
-        </ul>
-    </div>
+    <nav class="navbar-right">
+            <ul class="right">
+                <li class="m"><a href="index.html">Home</a></li>
+                <li class="m"><a href="education.html">Education</a></li>
+                <li class="m"><a href="hobbies.html">Hobbies</a></li>
+                <li class="m"><a href="projects.html">Projects</a></li>
+                <li class="m"><a href="achievement.html">Achievement</a></li>
+                <li class="m"><a href="contactme.html">Contact Us</a></li>
+                <li class="bar"><a href="#" onclick="fun()"><i class="fa-solid fa-bars"></i></a></li>
+            </ul>
+
+    
+            <ul class="hide" id="hide">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="hobbies.html">Hobbies</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="achievement.html">Achievement</a></li>
+                <li><a href="contactme.html">Contact Us</a></li>
+                <li><a href="#" onclick="hid()">X</a></li>
+            </ul>
+        
+    </nav>
    </div> 
    <div class="main">
     <div class="about-me">Hello, Welcome to my Website !<br>
@@ -46,5 +153,23 @@
         <img src="./images/pic.jpg" alt="Aryan Pic" class="main-image">
     </div>
    </div>
+ <script>
+        function fun(){
+            var a=document.getElementById("hide");
+            if(a.style.right=="20px"){
+                a.style.right="-60%";
+                a.style.transition="2s";
+            }else{
+            a.style.right="20px";
+            a.style.transition="2s";
+            }
+            
+        }
+        function hid(){
+            var a=document.getElementById("hide");
+            a.style.right="-60%";
+            a.style.transition="2s";
+        }
+    </script>
 </body>
 </html>
