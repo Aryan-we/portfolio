@@ -48,6 +48,95 @@ a{
 a:hover{
    color: white; 
 }
+    body{
+        background-color: #eee;
+    }
+    
+    .navbar{
+        display: flex;
+        text-align: center;
+        justify-content: space-between;
+        background-color: #fff;
+      
+    }
+
+    .right{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        list-style: none;
+        border: 0px solid;
+    }
+    .right li a{
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 100;
+        color: black;
+        padding: 10px;
+
+    }
+    .right li a:hover{
+        background-color: green;
+        color: white;
+        border-radius: 20px;
+    }
+    .hide{
+        position: fixed;
+        top: 50px;
+        right: -60%;
+        width: 200px;
+        height: auto;
+        background-color: #fff;
+        border-radius: 10px;
+        border: 1px solid;
+        box-shadow: -5px 5px 5px #7a7474;
+        padding: 10px;
+        
+    }
+    .hide li{
+        list-style: none;
+        margin: 10px 0px;
+        width: 100%;
+        padding: 10px;
+    }
+    .hide li a{
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 100;
+        color: black;
+
+    }
+    .hide li:hover{
+        background-color: green;
+        color: white;
+        border-radius: 20px;
+    }
+    .hide li a:hover{
+        color: white;
+    }
+    .bar{
+        display: none;
+    }
+    @media (max-width:900px){
+        .left i{
+            font-size: 20px;
+        }
+        .m{
+            display: none;
+        }
+        .bar{
+            display: block;
+        } 
+        .navbar{
+            padding: 10px;
+        }
+    .hide{
+        padding: 7px;
+        
+    }
+    }
+
 .main{
     margin-top: 20px;
     background-color: #eee;
