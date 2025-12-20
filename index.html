@@ -1,136 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aryan Kumar Dubey</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-<style>
-/* LOCK SCREEN */
-#lockScreen{
-    position: fixed;
-    inset: 0;
-    background: #f2f2f2;
-    z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 10px;
-}
-#pattern{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(3,1fr);
-    width: 90vw;
-    max-width: 320px;
-    aspect-ratio: 1 / 1;
-    gap: 5vw;
-    max-gap: 25px;
-    margin:20px 0;
-}
-.dot{
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    border: 3px solid #333;
-    background: white;
-}
-.dot.active{background: #4CAF50;}
-#lockScreen button{
-    padding: 10px 25px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    border-radius: 6px;
-    background: #333;
-    color: white;
-}
-#lockResult{font-weight:bold; margin-top:10px; font-size:16px;}
-#siteContent{display: none;}
-img{max-width: 100%; height:auto;}
-
-/* Navbar */
-.navbar{
-    display:flex; justify-content:space-between; align-items:center;
-    padding:10px 20px; background:#f0f0f0; flex-wrap:wrap;
-    position: relative;
-}
-.navbar-items b{font-size:2rem;}
-.navbar-right ul.right{
-    list-style:none; display:flex; gap:15px; margin:0; padding:0;
-}
-.navbar-right ul.right li a{text-decoration:none; color:#333;}
-.navbar-right ul.hide{
-    display:none; flex-direction:column; position:absolute;
-    top:60px; right:20px; background:#fff; border:1px solid #ccc;
-    padding:10px; gap:10px; z-index:999;
-}
-.navbar-right ul.hide a{color:#333; text-decoration:none;}
-.navbar-right ul.hide.show{display:flex;}
-.bar{cursor:pointer; font-size:1.5rem; color:#333; display:none;}
-@media(max-width:768px){
-    .navbar-right ul.right{display:none;}
-    .bar{display:block;}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aryan Kumar Dubey</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 </head>
+    
 <body>
-
-<!-- LOCK SCREEN -->
-<div id="lockScreen">
-    <h2>Draw Unlock Pattern</h2>
-    <p>Row1-Col2 → Row2-Col1 → Row2-Col3 → Row3-Col2</p>
-    <div id="pattern">
-        <div class="dot" data-id="1"></div>
-        <div class="dot" data-id="2"></div>
-        <div class="dot" data-id="3"></div>
-        <div class="dot" data-id="4"></div>
-        <div class="dot" data-id="5"></div>
-        <div class="dot" data-id="6"></div>
-        <div class="dot" data-id="7"></div>
-        <div class="dot" data-id="8"></div>
-        <div class="dot" data-id="9"></div>
-    </div>
-    <button onclick="checkPattern()">Check Pattern</button>
-    <p id="lockResult"></p>
-</div>
-
-<!-- SITE CONTENT -->
-<div id="siteContent">
-<div class="navbar">
-    <div class="navbar-items">
-        <font color="green" size="50px">
-            <b><span style="color:red;">P</span>ort<span style="color:red;">f</span>olio</b>
-        </font>
-    </div>
-    <nav class="navbar-right">
-        <!-- Hamburger button always visible on mobile -->
-        <div class="bar" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
-
-        <ul class="right">
-            <li class="m"><a href="index.html">Home</a></li>
-            <li class="m"><a href="education.html">Education</a></li>
-            <li class="m"><a href="hobbies.html">Hobbies</a></li>
-            <li class="m"><a href="projects.html">Projects</a></li>
-            <li class="m"><a href="achievement.html">Achievement</a></li>
-            <li class="m"><a href="contactme.html">Contact</a></li>
-        </ul>
-
-        <ul class="hide" id="hide">
-            <a href="index.html"><li>Home</li></a>
-            <a href="education.html"><li>Education</li></a>
-            <a href="hobbies.html"><li>Hobbies</li></a>
-            <a href="projects.html"><li>Projects</li></a>
-            <a href="achievement.html"><li>Achievement</li></a>
-            <a href="contactme.html"><li>Contact Me</li></a>
-            <a href="#" onclick="toggleMenu()"><li>X</li></a>
-        </ul>
-    </nav>
-</div>
-
    <div class="navbar">
     <div class="navbar-items">
        <!--<img src="pic.jpg" alt="logo" class="logo-img">--> 
@@ -183,54 +62,7 @@ img{max-width: 100%; height:auto;}
         <img src="./images/pic.jpg" alt="Aryan Pic" class="main-image">
     </div>
    </div>
-
-<script>
-// PATTERN LOCK
-let userPattern = [];
-let isDrawing = false;
-const correctPattern = ["2","4","6","8"];
-const dots = document.querySelectorAll(".dot");
-dots.forEach(dot=>{
-    dot.addEventListener("mousedown",()=>start(dot));
-    dot.addEventListener("mouseenter",()=>draw(dot));
-    dot.addEventListener("touchstart",()=>start(dot));
-    dot.addEventListener("touchmove",e=>{
-        const t=document.elementFromPoint(e.touches[0].clientX,e.touches[0].clientY);
-        if(t && t.classList.contains("dot")) draw(t);
-    });
-});
-document.addEventListener("mouseup",()=>isDrawing=false);
-document.addEventListener("touchend",()=>isDrawing=false);
-function start(dot){ isDrawing=true; addDot(dot); }
-function draw(dot){ if(isDrawing) addDot(dot); }
-function addDot(dot){
-    const id=dot.dataset.id;
-    if(!userPattern.includes(id)){
-        userPattern.push(id);
-        dot.classList.add("active");
-    }
-}
-function checkPattern(){
-    if(JSON.stringify(userPattern)===JSON.stringify(correctPattern)){
-        document.getElementById("lockScreen").style.display="none";
-        document.getElementById("siteContent").style.display="block";
-    } else {
-        const res=document.getElementById("lockResult");
-        res.style.color="red";
-        res.innerText="Wrong Pattern ❌";
-        setTimeout(clearPattern,1000);
-    }
-}
-function clearPattern(){
-    userPattern=[];
-    dots.forEach(d=>d.classList.remove("active"));
-}
-
-// MOBILE MENU TOGGLE
-function toggleMenu(){
-    document.getElementById("hide").classList.toggle("show");
-}
-</script>
+<script src="script.js"></script>
 </body>
 </html>
 
