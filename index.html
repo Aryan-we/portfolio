@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +7,11 @@
 <title>Aryan Kumar Dubey</title>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
 <style>
-#lockScreen{
+/* LOCK SCREEN */
+#lockScreen {
     position: fixed;
     inset: 0;
     background: #f2f2f2;
@@ -21,7 +24,7 @@
     padding: 10px;
 }
 
-#pattern{
+#pattern {
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(3,1fr);
@@ -33,7 +36,7 @@
     margin:20px 0;
 }
 
-.dot{
+.dot {
     width: 100%;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
@@ -41,11 +44,11 @@
     background: white;
 }
 
-.dot.active{
+.dot.active {
     background: #4CAF50;
 }
 
-#lockScreen button{
+#lockScreen button {
     padding: 10px 25px;
     font-size: 16px;
     cursor: pointer;
@@ -55,27 +58,28 @@
     color: white;
 }
 
-#lockResult{
+#lockResult {
     font-weight:bold;
     margin-top:10px;
     font-size:16px;
 }
 
-#siteContent{
+#siteContent {
     display: none;
 }
 
-img{
-    max-width:100%;
-    height:auto;
+img {
+    max-width: 100%;
+    height: auto;
 }
 </style>
 </head>
 <body>
 
+<!-- LOCK SCREEN -->
 <div id="lockScreen">
     <h2>Draw Unlock Pattern</h2>
-    
+    <p>Row1-Col2 → Row2-Col1 → Row2-Col3 → Row3-Col2</p>
     <div id="pattern">
         <div class="dot" data-id="1"></div>
         <div class="dot" data-id="2"></div>
@@ -91,44 +95,45 @@ img{
     <p id="lockResult"></p>
 </div>
 
+<!-- SITE CONTENT -->
 <div id="siteContent">
-<div class="navbar">
-    <div class="navbar-items">
-        <font color="green" size="50px">
-            <b><span style="color:red;">P</span>ort<span style="color:red;">f</span>olio</b>
-        </font>
+    <div class="navbar">
+        <div class="navbar-items">
+            <font color="green" size="50px">
+                <b><span style="color:red;">P</span>ort<span style="color:red;">f</span>olio</b>
+            </font>
+        </div>
+        <nav class="navbar-right">
+            <ul class="right">
+                <li class="m"><a href="index.html">Home</a></li>
+                <li class="m"><a href="education.html">Education</a></li>
+                <li class="m"><a href="hobbies.html">Hobbies</a></li>
+                <li class="m"><a href="projects.html">Projects</a></li>
+                <li class="m"><a href="achievement.html">Achievement</a></li>
+                <li class="m"><a href="contactme.html">Contact</a></li>
+            </ul>
+        </nav>
     </div>
-    <nav class="navbar-right">
-        <ul class="right">
-            <li class="m"><a href="index.html">Home</a></li>
-            <li class="m"><a href="education.html">Education</a></li>
-            <li class="m"><a href="hobbies.html">Hobbies</a></li>
-            <li class="m"><a href="projects.html">Projects</a></li>
-            <li class="m"><a href="achievement.html">Achievement</a></li>
-            <li class="m"><a href="contactme.html">Contact</a></li>
-        </ul>
-    </nav>
-</div>
 
-<div class="main">
-    <div class="about-me">
-        Hello, Welcome to my Website!<br>
-        My name is <b style="color:green;">ARYAN KUMAR DUBEY</b><br>
-        Polytechnic in IT from <b style="color:green;">Govt. Polytechnic Mirzapur</b><br>
-        B-Tech CSE from <b style="color:green;">SIET, Prayagraj</b><br>
-        <a href="ARYAN_KUMAR_DUBEY (1).pdf"><button>Download Resume</button></a>
+    <div class="main">
+        <div class="about-me">
+            Hello, Welcome to my Website !<br>
+            My name is <b style="color:green;">ARYAN KUMAR DUBEY</b><br>
+            I have done my Polytechnic in IT Branch from <b style="color:green;">Government Polytechnic Mirzapur</b><br>
+            At present, I am pursuing B-TECH in CSE Branch from <b style="color:green;">SIET, Prayagraj</b><br>
+            <a href="ARYAN_KUMAR_DUBEY (1).pdf"><button>Download Resume</button></a>
+        </div>
+        <div class="about-me-image">
+            <img src="./images/pic.jpg" alt="Aryan Pic" class="main-image">
+        </div>
     </div>
-    <div class="about-me-image">
-        <img src="./images/pic.jpg" class="main-image">
-    </div>
-</div>
 </div>
 
 <script>
-let userPattern=[];
-let isDrawing=false;
-const correctPattern=["2","4","6","8"];
-const dots=document.querySelectorAll(".dot");
+let userPattern = [];
+let isDrawing = false;
+const correctPattern = ["2","4","6","8"];
+const dots = document.querySelectorAll(".dot");
 
 dots.forEach(dot=>{
     dot.addEventListener("mousedown",()=>start(dot));
@@ -152,6 +157,7 @@ function addDot(dot){
         dot.classList.add("active");
     }
 }
+
 function checkPattern(){
     if(JSON.stringify(userPattern)===JSON.stringify(correctPattern)){
         document.getElementById("lockScreen").style.display="none";
@@ -163,6 +169,7 @@ function checkPattern(){
         setTimeout(clearPattern,1000);
     }
 }
+
 function clearPattern(){
     userPattern=[];
     dots.forEach(d=>d.classList.remove("active"));
