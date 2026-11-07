@@ -389,13 +389,6 @@ padding :1rem 0;
         
         
     }
-    .navbar .navbar-items font::after{
-        content: "ARYAN KUMAR DUBEY";
-        color: red;
-        font-size: 18px;
-        font-weight: bold;
-        white-space: nowrap;
-}
   
 
     
