@@ -73,49 +73,266 @@
     </nav>
        </div> 
    
-    <h1 class="heading" align="center" ><span>Projects</span></h1>
-<section class="blog" id="blogs"> 
-    <div class="box-container">
-        <div class="box">
-            <img id="img" src="./images/IMG_20240412_005328.png" width ="100%" height="26%" alt="">
-            <div class="content" id="content">
-                <h3 id="heading">Employee Management System</h3>
-                <p id="explain">
-                    In this project i make a website which is an Employee Data Entry Automation Software.
-                    In front-end i used HTML,CSS Languagues and in back-end i used PHP Languague 
-                    that is used to connect with MYSQL database and perform Insert, Select, Update ,Delete Operations. Xampp Server is used to provide localhost and MYSQL database.</p>
-                  
-            </div>
-        </div>
-             <div class="box">
-            <img id="img" src="./images/IMG_20240412_005252.png" width ="100%" height="31%" alt="">
-            <div class="content">
-                <h3 id="heading">Simple Calculator</h3>
-                <p id="explain">
-                    This is a Simple Calculator that is used to perform Addition,Substraction,
-                    Multiplication ,Division and Modulo Operations by the help of +,-,*,/,% symbol buttons.
-                    In front-end i used HTML,CSS and JavaScript.This Calculator also have ON , OFF  and Clear buttons .
-                </p>
-                
-            </div>
-        </div>
-             <div class="box">
-            <img id="img" src="./images/Screenshot_20240412_004508_TrebEdit_124907.jpg" width ="100%" height="30%" alt="">
-            <div class="content">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects Showcase - Aryan Kumar Dubey</title>
 
-                <h3 id="heading">Grocery Website</h3>
-                <p id="explain">This is a Responsive Grocery Website. Here i used HTML, CSS and JavaScript Languages.
-                    This have Feature, Product, Categories, Review and Blog Sections.
+<style>
+    * {
+        box-sizing: border-box;
+    }
 
-                </p>
-                 
-            </div>
-        </div>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f5f6fa;
+        color: #333;
+    }
+
+    /* HEADER */
+    header {
+        background: #ffffff;
+        padding: 15px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        border-bottom: 1px solid #ddd;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header input {
+        padding: 10px;
+        width: 260px;
+        max-width: 90%;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+    }
+
+    .filter-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        justify-content: center;
+    }
+
+    .filter-buttons button {
+        padding: 8px 14px;
+        border: none;
+        border-radius: 6px;
+        background: #eee;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .filter-buttons .active {
+        background: #4c6ef5;
+        color: white;
+    }
+
+    /* GRID */
+    .grid {
+        display: grid;
+        padding: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    /* CARDS */
+    .card {
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    }
+
+    .card h3 {
+        margin: 0 0 10px;
+        font-size: 18px;
+        color: #1d1d1d;
+    }
+
+    .card p {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 10px;
+    }
+
+    .card a {
+        text-decoration: none;
+        color: #4c6ef5;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    /* MOBILE FIXES */
+    @media(max-width: 480px) {
+        header {
+            flex-direction: column;
+        }
+        header input {
+            width: 100%;
+        }
+        .card {
+            padding: 18px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <input type="text" id="search" placeholder="Search projects..." onkeyup="searchProjects()">
+
+    <div class="filter-buttons">
+        <button class="active" onclick="filterProjects('all')">All</button>
+        <button onclick="filterProjects('frontend')">Frontend</button>
+        <button onclick="filterProjects('backend')">Backend</button>
     </div>
-    
-    
-   
-</section>
+</header>
+
+<div class="grid" id="projectGrid">
+
+    <!-- FRONTEND PROJECTS -->
+    <div class="card" data-type="frontend" data-title="Simple Calculator">
+        <h3>Simple Calculator</h3>
+        <p>Responsive calculator using HTML, CSS, JS.</p>
+        <a href="https://aryan-we.github.io/Calculator/" target="_blank">View Project</a>
+    </div>
+
+    <div class="card" data-type="frontend" data-title="BMI Calculator">
+        <h3>BMI Calculator</h3>
+        <p>BMI checker using JS.</p>
+        <a href="https://aryan-we.github.io/BMI/" target="_blank">View Project</a>
+    </div>
+
+    <div class="card" data-type="frontend" data-title="Rock Paper Scissor">
+        <h3>Rock-Paper-Scissor</h3>
+        <p>Classic game with JS logic.</p>
+        <a href="https://aryan-we.github.io/Rock-Paper-Scissor-Game/" target="_blank">View Project</a>
+    </div>
+
+    <div class="card" data-type="frontend" data-title="Tic Tac Toe">
+        <h3>Tic-Tac-Toe</h3>
+        <p>Game with responsive UI.</p>
+        <a href="https://aryan-we.github.io/TIC-TAC-TOE/" target="_blank">View Project</a>
+    </div>
+
+    <div class="card" data-type="frontend" data-title="Portfolio Website">
+        <h3>Portfolio Website</h3>
+        <p>Personal portfolio website.</p>
+        <a href="https://aryan-we.github.io/portfolio/" target="_blank">View Project</a>
+    </div>
+
+    <div class="card" data-type="frontend" data-title="Interactive Recipe Card">
+        <h3>Interactive Recipe Card</h3>
+        <p>Expandable recipe UI.</p>
+        <a href="https://aryan-we.github.io/Interactive-Recipe-Card/" target="_blank">View Project</a>
+    </div>
+
+    <div class="card" data-type="frontend" data-title="Analog Clock">
+        <h3>Analog Clock</h3>
+        <p>Analog clock using JS and CSS.</p>
+        <a href="https://aryan-we.github.io/Analog-Clock/" target="_blank">View Project</a>
+    </div>
+
+    <div class="card" data-type="frontend" data-title="To-do List">
+        <h3>To-do List</h3>
+        <p>Task manager with localStorage.</p>
+        <a href="https://aryan-we.github.io/to-do-list/" target="_blank">View Project</a>
+    </div>
+
+    <div class="card" data-type="frontend" data-title="Image Filtering Site">
+        <h3>Image Filter App</h3>
+        <p>Apply filters on images.</p>
+        <a href="https://aryan-we.github.io/Image-Filter-App-/" target="_blank">View Project</a>
+    </div>
+   <div class="card" data-type="frontend" data-title="Image Filtering Site">
+        <h3>Music Player</h3>
+        
+        <a href="https://aryan-we.github.io/Music-Player-Site/" target="_blank">View Project</a>
+    </div>
+   <div class="card" data-type="frontend" data-title="Image Filtering Site">
+        <h3>Internet Connectivity and Battery Status Checking</h3>
+        
+        <a href="https://aryan-we.github.io/Internet-Connection-and-Battery-Status-Checking/" target="_blank">View Project</a>
+    </div>
+
+    <!-- BACKEND PROJECTS -->
+    <div class="card" data-type="backend" data-title="Live Chatting System">
+        <h3>Live Chatting System</h3>
+        <p>Real-time chat using PHP.</p>
+        <a href="https://github.com/Aryan-we/Live-Chat-System" target="_blank">View Project</a>
+    </div>
+
+    <div class="card" data-type="backend" data-title="Employee Management System">
+        <h3>Employee Management System</h3>
+        <p>CRUD operations with MySQL.</p>
+        <a href="https://github.com/Aryan-we/Employee-Management-System" target="_blank">View Project</a>
+    </div>
+
+    <div class="card" data-type="backend" data-title="Student Attendance System">
+        <h3>Student Attendance System</h3>
+        <p>It allows tracking, recording and managing students’ attendance regularly using a web-based interface.</p>
+        <a href="https://github.com/Aryan-we/Attendance-Management-System" target="_blank">View Project</a>
+    </div>
+
+    <div class="card" data-type="backend" data-title="College Management System">
+        <h3>College Management System</h3>
+        <p>It handles admin, faculty, student, attendance, library and authentication workflows using PHP, MySQL.</p>
+        <a href="https://github.com/Aryan-we/CMS" target="_blank">View Project</a>
+    </div>
+       <div class="card" data-type="backend" data-title="Image Gallery System">
+        <h3>Image Gallery System</h3>
+        <p>Users can upload, view and organize pictures through an interactive front end.</p>
+        <a href="https://github.com/Aryan-we/Image-Gallery" target="_blank">View Project</a>
+    </div>
+
+</div>
+
+<script>
+function searchProjects() {
+    let input = document.getElementById("search").value.toLowerCase();
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+        let title = card.getAttribute("data-title").toLowerCase();
+        card.style.display = title.includes(input) ? "block" : "none";
+    });
+}
+
+function filterProjects(type) {
+    document.querySelectorAll(".filter-buttons button")
+        .forEach(btn => btn.classList.remove("active"));
+
+    event.target.classList.add("active");
+
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+        card.style.display = (type === "all" || card.getAttribute("data-type") === type)
+            ? "block"
+            : "none";
+    });
+}
+</script>
+
+</body>
+</html>
 <script src="script.js"></script>
 </body>
 </html>
