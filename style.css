@@ -389,7 +389,7 @@ padding :1rem 0;
         
         
     }
-    .navbar-items font name::before {
+    .navbar-items font ::before {
     content: "ARYAN KUMAR DUBEY";
     font-size: 30px;
     color: red;
