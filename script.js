@@ -16,8 +16,5 @@ function hid(){
     a.style.transition="1s";
 }
 
- function exitPage(){
-            window.close();
-        }
 
 
