@@ -242,6 +242,11 @@ a:hover{
     background-color: green;
     color: white;
 }*/
+.navbar-items{
+    padding: 5px 35px;
+    width:60%;
+
+}
 
 /* projects */
 .blog .box-container{
