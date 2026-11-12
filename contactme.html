@@ -18,41 +18,44 @@
 
 .address, .link {
     position: relative;
-    border-radius: 15px;
     overflow: hidden;
+    border-radius: 15px;
     isolation: isolate;
 }
 
-/* Animated border line */
+/* Single rotating line */
 .address::before,
 .link::before {
     content: "";
     position: absolute;
-    inset: 0;
-    padding: 3px;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
 
     background: conic-gradient(
-        transparent 70%,
-        red,
-        blue,
-        cyan,
-        green,
-        transparent
+        transparent 0deg,
+        transparent 300deg,
+        red 330deg,
+        cyan 350deg,
+        transparent 360deg
     );
 
-    border-radius: inherit;
-
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-
-    pointer-events: none;
+    z-index: -2;
 }
 
-/* Start animation on hover */
+/* Inner box */
+.address::after,
+.link::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    background: white;
+    border-radius: 12px;
+    z-index: -1;
+}
+
+/* Hover animation */
 .address:hover::before,
 .link:hover::before {
     animation: rotate 2s linear infinite;
