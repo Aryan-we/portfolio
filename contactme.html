@@ -16,27 +16,27 @@
             border-bottom: 2px solid grey;
         }
 
-
-.link a div {
+.address, .link {
     position: relative;
+    border-radius: 15px;
     overflow: hidden;
-    border-radius: 10px;
     isolation: isolate;
-    padding: 12px 20px;
 }
 
-/* Moving border */
-.link a div::before {
+/* Animated border line */
+.address::before,
+.link::before {
     content: "";
     position: absolute;
     inset: 0;
-    padding: 2px;
+    padding: 3px;
 
     background: conic-gradient(
         transparent 70%,
         red,
         blue,
         cyan,
+        green,
         transparent
     );
 
@@ -45,14 +45,16 @@
     -webkit-mask:
         linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
+
     -webkit-mask-composite: xor;
     mask-composite: exclude;
 
     pointer-events: none;
 }
 
-/* Hover animation */
-.link a div:hover::before {
+/* Start animation on hover */
+.address:hover::before,
+.link:hover::before {
     animation: rotate 2s linear infinite;
 }
 
