@@ -15,7 +15,55 @@
             color:green;
             border-bottom: 2px solid grey;
         }
-       
+
+
+        .address, .link {
+    position: relative;
+    padding: 5px;
+    border-radius: 15px;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.address::before, .link::before {
+    content: "";
+    position: absolute;
+    inset: -50%;
+    background: conic-gradient(
+        transparent,
+        red,
+        blue,
+        cyan,
+        green,
+        transparent 30%
+    );
+    z-index: -2;
+}
+
+.address::after, .link::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    background: white;
+    border-radius: 12px;
+    z-index: -1;
+}
+
+.address:hover::before,
+.link:hover::before {
+    animation: rotate 3s linear infinite;
+}
+
+.location, .link a {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
     </style>
 </head>
     
