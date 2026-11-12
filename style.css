@@ -242,9 +242,9 @@ a:hover{
     background-color: green;
     color: white;
 }*/
-.navbar-items{
+.navbar .navbar-items{
     padding: 5px 35px;
-    width:60%;
+    width:80%;
 
 }
 
