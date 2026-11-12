@@ -12,9 +12,9 @@
     position: relative;
     display: inline-block;
     padding: 4px;
+    border-radius: 15px;
     overflow: hidden;
-    border-radius: 15px; /* Adjust according to image shape */
-    z-index: 1;
+    isolation: isolate;
 }
 
 .about-me-image::before {
@@ -22,13 +22,13 @@
     position: absolute;
     inset: -50%;
     background: conic-gradient(
-        transparent,
+        transparent 70%,
         red,
         blue,
         cyan,
-        green,
-        transparent 30%
+        transparent
     );
+    animation: rotate 3s linear infinite;
     z-index: -2;
 }
 
@@ -37,19 +37,23 @@
     position: absolute;
     inset: 4px;
     background: white;
-    border-radius: 12px;
+    border-radius: 11px;
     z-index: -1;
 }
 
 .main-image {
     display: block;
-    max-width: 100%;
+    width: 250px;
     height: auto;
     border-radius: 11px;
 }
 
 .about-me-image:hover::before {
-    animation: rotate 2s linear infinite;
+    animation-play-state: running;
+}
+
+.about-me-image::before {
+    animation-play-state: paused;
 }
 
 @keyframes rotate {
