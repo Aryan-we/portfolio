@@ -8,23 +8,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <style>
-        .about-me-image {
+.about-me-image {
     position: relative;
     display: inline-block;
-    padding: 5px;
-    border-radius: 50%;
+    padding: 4px;
     overflow: hidden;
+    border-radius: 15px; /* Adjust according to image shape */
     z-index: 1;
 }
 
 .about-me-image::before {
     content: "";
     position: absolute;
-    width: 200%;
-    height: 200%;
-    top: -50%;
-    left: -50%;
-
+    inset: -50%;
     background: conic-gradient(
         transparent,
         red,
@@ -33,7 +29,6 @@
         green,
         transparent 30%
     );
-
     z-index: -2;
 }
 
@@ -41,17 +36,16 @@
     content: "";
     position: absolute;
     inset: 4px;
-    background: #fff;
-    border-radius: 50%;
+    background: white;
+    border-radius: 12px;
     z-index: -1;
 }
 
 .main-image {
     display: block;
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 11px;
 }
 
 .about-me-image:hover::before {
@@ -59,7 +53,7 @@
 }
 
 @keyframes rotate {
-    100% {
+    to {
         transform: rotate(360deg);
     }
 }
